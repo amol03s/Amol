@@ -1,7 +1,6 @@
 package com.training.test;
-
+import java.util.List;
 import java.util.Scanner;
-
 import com.training.beans.MyUser;
 import com.training.service.UserService;
 import com.training.service.UserServiceImpl;
@@ -12,7 +11,7 @@ public class TestJDBC {
 		int choice=0;
 		UserService us=new UserServiceImpl();
 		do {
-		System.out.println("1. Add new Record\n 2. update Record \n 3.Delete Record \n 4.exit\n");
+		System.out.println("1.Add new Record\n 2.Update Record \n 3.Delete Record \n  4.Displayallusers \n 5.UpdatePassword \n 6.Exit\n");
 		System.out.println("choice : ");
 		choice=sc.nextInt();
 		switch(choice) {
@@ -50,7 +49,7 @@ public class TestJDBC {
 			   break;
 			   
 		case 3:
-				System.out.println("Enter the Id For delete the record");
+				
 				id =sc.nextInt();
 				 u=us.getById(id);
 				 if(u!=null)
@@ -63,27 +62,58 @@ public class TestJDBC {
 					   n=us.deleterecord(id);	 
 						if(n!=0)
 						{
-							System.out.println("deleted successfully");
-						
+							System.out.println("deleted successsfully");
 						}
 						else
 						{
-							
-							System.out.println(" not deleted successfully");
+							System.out.println("deleted successsfully");
 						}
-					 }
-
 				 }
-			
-			   break;
+				 }
+				 break;
 			   
-		case 4:
-			   us.closeConnection();
-			   System.exit(0);
-			   break;
+				
+				case 4:
+					  List <MyUser> ls= us.displayAlluser();
+					  for(MyUser i:ls)
+					  {
+						  System.out.println(i);
+					  }
+					  break;
+			  
+				case 5:
+				    System.out.println("Enter the id  ");
+				     id =sc.nextInt();
+					System.out.println("Enter the New password ");
+					String ps =sc.next();
+					System.out.println("Enter the Re-enter  password ");
+					String rs =sc.next();
+					if(ps.equals(rs))
+					{
+						 n=us.updatepassword(id,ps);
+						if(n>0) {
+							System.out.println("Update Succesfully");
+						}else {
+							System.out.println("Update Not Succesfully");
+						}
+					}
+					else
+					{
+						System.out.println("Please Enter right Credintials");
+					}
+				break;
+					  
+					  
+				case 6:
+					   sc.close();
+					   us.closeConnection();
+					   System.exit(0);
+					   break;
+			
+		
+					
+		           }/*Switch end*/			
+		}while(choice!=6);
 		}
-		}while(choice!=4);
-
-	}
-
 }
+

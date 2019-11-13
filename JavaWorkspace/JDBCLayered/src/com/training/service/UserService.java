@@ -1,5 +1,7 @@
 package com.training.service;
 
+import java.util.List;
+
 import com.training.beans.MyUser;
 
 public interface UserService {
@@ -8,4 +10,6 @@ public interface UserService {
 	int updateRecord(int id);
 	void closeConnection();
 	int deleterecord(int id);
+	List<MyUser> displayAlluser();
+	int updatepassword(int id,String ps);
 }

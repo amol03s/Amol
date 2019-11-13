@@ -1,5 +1,7 @@
 package com.training.dao;
 
+import java.util.List;
+
 import com.training.beans.MyUser;
 
 public interface UserDao {
@@ -8,5 +10,7 @@ public interface UserDao {
 	int updateData(MyUser ob);
 	void closeConnection();
    int 	deleterecordbyid(int id);
+   List<MyUser> displayalluser();
+   int updatepassword(int id,String ps);
 
 }
