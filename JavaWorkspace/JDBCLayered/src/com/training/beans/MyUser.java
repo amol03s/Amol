@@ -1,5 +1,4 @@
 package com.training.beans;
-
 public class MyUser {
 	private int id;
 	private String nm;

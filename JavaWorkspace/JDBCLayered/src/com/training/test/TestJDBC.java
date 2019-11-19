@@ -103,16 +103,12 @@ public class TestJDBC {
 					}
 				break;
 					  
-					  
 				case 6:
 					   sc.close();
 					   us.closeConnection();
 					   System.exit(0);
 					   break;
-			
-		
-					
-		           }/*Switch end*/			
+		        }/*Switch end*/			
 		}while(choice!=6);
 		}
 }

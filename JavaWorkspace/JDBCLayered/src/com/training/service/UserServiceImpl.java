@@ -7,12 +7,14 @@ import com.training.dao.UserDaoImpl;
 
 public class UserServiceImpl implements UserService {
     private UserDao udao;
-	public UserServiceImpl() {
+    
+	public UserServiceImpl(){
 		super();
 		this.udao = new UserDaoImpl();
 	}
+	
 	@Override
-	public int addNewRecord() {
+	public int addNewRecord(){
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter Id");
 		int id=sc.nextInt();
@@ -24,7 +26,6 @@ public class UserServiceImpl implements UserService {
 		String rl=sc.next();
 		MyUser ob=new MyUser(id,nm,ps,rl);
 		return udao.insertData(ob);
-
 	}
 
 	@Override

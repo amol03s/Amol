@@ -9,8 +9,9 @@ public class MyConnection {
 		if(conn==null){
 			try {
 				DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			    String url="jdbc:mysql://192.168.10.71:3307/dac13";
-			    conn=DriverManager.getConnection(url,"dac13","welcome");
+			   String url ="jdbc:mysql://127.0.0.1:3306/user01";
+				// String url="jdbc:mysql://192.168.10.71:3307/dac13";
+			    conn=DriverManager.getConnection(url,"root","root123");
 			    System.out.println("Connection Done Succesfully");
 			}catch (SQLException e) {
 				e.printStackTrace();
