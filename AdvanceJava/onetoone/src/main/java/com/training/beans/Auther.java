@@ -1,29 +1,23 @@
 package com.training.beans;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity(name="Auther")
 public class Auther {
+
 	@Id
 	private int id;
 	private String aname;
-	private  String mob;
-	
-	public Auther(int id, String aname, String mob) {
+	private String amob;
+	public Auther() {
+		super();
+	}
+	public Auther(int id, String aname, String amob) {
 		super();
 		this.id = id;
 		this.aname = aname;
-		this.mob = mob;
-	}
-	
-	
-
-	@Override
-	public String toString() {
-		return "Auther [id=" + id + ", aname=" + aname + ", mob=" + mob + "]";
+		this.amob = amob;
 	}
 	public int getId() {
 		return id;
@@ -37,15 +31,18 @@ public class Auther {
 	public void setAname(String aname) {
 		this.aname = aname;
 	}
-	public String getMob() {
-		return mob;
+	public String getAmob() {
+		return amob;
 	}
-	public void setMob(String mob) {
-		this.mob = mob;
+	public void setAmob(String amob) {
+		this.amob = amob;
 	}
-	public Auther() {
-		super();
+	@Override
+	public String toString() {
+		return "Auther [id=" + id + ", aname=" + aname + ", amob=" + amob + "]";
 	}
 	
-
+	
+	
+	
 }

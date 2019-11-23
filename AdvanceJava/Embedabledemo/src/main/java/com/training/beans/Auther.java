@@ -4,7 +4,8 @@ import javax.persistence.Embeddable;
 
 
 @Embeddable
-public class Auther {
+public class Auther 
+{
 	
 	private int id;
 	private String aname;

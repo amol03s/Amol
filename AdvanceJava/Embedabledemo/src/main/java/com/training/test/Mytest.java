@@ -39,16 +39,16 @@ public class Mytest {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the book id");
 		String id=sc.next();
-		/*MyBook b=bs.getMyBookbyid(id);
+		MyBook b=bs.getMyBookbyid(id);
 		if(b!=null)
 		{
-			System.out.println("id is found");
+			System.out.println("id is found"+b);
 			
 		}
 		else
 		{
 			System.out.println("id is not found");
 			
-		}*/
+		}
 	}
 }

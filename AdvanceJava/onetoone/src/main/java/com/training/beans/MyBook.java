@@ -1,62 +1,91 @@
 package com.training.beans;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-@Entity(name="MyBookone")
+@Entity(name="MyBook")
 public class MyBook {
-	@Id
-	private String Bid;
-	private String bname;
-	private double bpri;
-	private int bpage;
+    @Id
+	private String id;
+	
+	private String name;
+	private String pri;
+	private String page;
+	
+	
 	@OneToOne
-	Auther au;
+	private Auther u;
+
 	public MyBook() {
 		super();
 	}
-	public MyBook(String bid, String bname, double bpri, int bpage, Auther au) {
+
+
+	public MyBook(String id, String name, String pri, String page, Auther u) {
 		super();
-		Bid = bid;
-		this.bname = bname;
-		this.bpri = bpri;
-		this.bpage = bpage;
-		this.au = au;
+		this.id = id;
+		this.name = name;
+		this.pri = pri;
+		this.page = page;
+		this.u = u;
 	}
-	public String getBid() {
-		return Bid;
+
+
+	public String getId() {
+		return id;
 	}
-	public void setBid(String bid) {
-		Bid = bid;
+
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getBname() {
-		return bname;
+
+
+	public String getName() {
+		return name;
 	}
-	public void setBname(String bname) {
-		this.bname = bname;
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public double getBpri() {
-		return bpri;
+
+
+	public String getPri() {
+		return pri;
 	}
-	public void setBpri(double bpri) {
-		this.bpri = bpri;
+
+
+	public void setPri(String pri) {
+		this.pri = pri;
 	}
-	public int getBpage() {
-		return bpage;
+
+
+	public String getPage() {
+		return page;
 	}
-	public void setBpage(int bpage) {
-		this.bpage = bpage;
+
+
+	public void setPage(String page) {
+		this.page = page;
 	}
-	public Auther getAu() {
-		return au;
+
+
+	public Auther getU() {
+		return u;
 	}
-	public void setAu(Auther au) {
-		this.au = au;
+
+
+	public void setU(Auther u) {
+		this.u = u;
 	}
+
+
 	@Override
 	public String toString() {
-		return "MyBook [Bid=" + Bid + ", bname=" + bname + ", bpri=" + bpri + ", bpage=" + bpage + ", au=" + au + "]";
+		return "MyBook [id=" + id + ", name=" + name + ", pri=" + pri + ", page=" + page + ", u=" + u + "]";
 	}
+	
+	
+	
 }

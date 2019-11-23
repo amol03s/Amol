@@ -27,11 +27,12 @@ public class MyDoaImpl implements MyDao {
 		tr.commit();
 		return true;
 	}
-	/*public MyBook getMyBookbyid(String id)
+	public MyBook getMyBookbyid(String id)
 	{
 		Session s=sf.openSession();
 		Transaction tr=s.beginTransaction();
-		return (MyBook) s.get(id, MyBook.class);
-	}*/
+		MyBook u=(MyBook) s.get(MyBook.class,new String(id));
+		return u;
+	}
 
 }

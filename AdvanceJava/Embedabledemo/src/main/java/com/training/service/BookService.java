@@ -9,5 +9,5 @@ public interface BookService {
 	
 	boolean addBook(List<MyBook> blist);
 	
- // MyBook	getMyBookbyid(String id);
+  MyBook	getMyBookbyid(String id);
 }

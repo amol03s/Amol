@@ -21,10 +21,10 @@ public class BookServiceImpl implements BookService{
 		
 		
 	}
-	/*public MyBook	getMyBookbyid(String id)
+	public MyBook	getMyBookbyid(String id)
 	 {
 		 
 		 return bdao.getMyBookbyid(id);
-	 }*/
+	 }
 
 }
