@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="hwbean" class="com.training.beans.Helloworld"  scope="singleton"></bean>
+	<bean id="2" class="com.training.beans.Helloworld" scope="singleton"></bean>
+	
+	<bean id="a1" class="com.training.beans.Address" scope="prototype">
+		<property name="street" value="SomavarPeth"></property>
+		<property name="city" value="Pune"></property>	
+	</bean>
+	
+	<bean id="p1" class="com.training.beans.Person" scope="prototype" >
+		<property name="id" value="10"></property>
+		<property name="name" value="Amol"></property>
+		<property name="a" ref="a1"></property>
+	</bean>
+	
+	
+</beans>
